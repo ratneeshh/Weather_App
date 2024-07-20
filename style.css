@@ -38,7 +38,8 @@ body {
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     padding: 40px;
-    width: 350px;
+    width: 90%; 
+    max-width: 400px; 
     text-align: center;
     transition: all 0.3s ease;
 }
@@ -51,7 +52,7 @@ body {
 h1 {
     margin-bottom: 30px;
     color: #bb86fc;
-    font-size: 32px;
+    font-size: 5vw;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -59,8 +60,8 @@ h1 {
 
 .input-group {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 input[type="text"] {
@@ -92,13 +93,13 @@ button:hover {
 }
 
 #location {
-    font-size: 28px;
+    font-size: 3vw;
     margin-bottom: 15px;
     color: #03dac6;
 }
 
 #temperature {
-    font-size: 42px;
+    font-size: 6vw;
     font-weight: bold;
     margin-bottom: 15px;
 }
@@ -106,5 +107,5 @@ button:hover {
 #description {
     font-style: italic;
     color: #cf6679;
-    font-size: 18px;
+    font-size: 2vw;
 }
