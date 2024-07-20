@@ -143,7 +143,6 @@ button:hover {
     font-size: 18px;
 }
 
-/* Responsive Design */
 @media (min-width: 600px) {
     .input-group {
         flex-direction: row;
