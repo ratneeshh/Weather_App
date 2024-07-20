@@ -57,11 +57,12 @@ body {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     padding: 40px;
     width: 90%;
-    max-width: 500px;
+    max-width: 400px;
     text-align: center;
     transition: all 0.3s ease;
     box-sizing: border-box;
 }
+
 
 .weather-card:hover {
     transform: scale(1.05);
@@ -122,25 +123,63 @@ button:hover {
 }
 
 .weather-info {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease, margin-top 0.5s ease;
+}
+
+.weather-info.show {
+    max-height: 350px; 
+    opacity: 1;
     margin-top: 30px;
 }
+
 
 #location {
     font-size: 28px;
     margin-bottom: 15px;
     color: #03dac6;
+    text-shadow: 0 0 10px rgba(3, 218, 198, 0.5);
+    
 }
 
 #temperature {
     font-size: 42px;
     font-weight: bold;
     margin-bottom: 15px;
+    background: linear-gradient(135deg, #bb86fc, #03dac6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 #description {
     font-style: italic;
     color: #cf6679;
     font-size: 18px;
+    padding: 10px 20px;
+    background-color: rgba(207, 102, 121, 0.1);
+    border-radius: 30px;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.weather-icon {
+    font-size: 72px;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 @media (min-width: 600px) {
