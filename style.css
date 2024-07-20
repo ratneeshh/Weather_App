@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #121212;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-size: 200% 200%;
+    animation: gradientAnimation 15s ease infinite;
     color: #ffffff;
     display: flex;
     justify-content: center;
@@ -8,6 +12,20 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    flex-direction: column;
+    text-align: center;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .creator-attribution {
@@ -34,14 +52,15 @@ body {
 }
 
 .weather-card {
-    background-color: #1e1e1e;
+    background: linear-gradient(135deg, #2a2a2a, #1e1e1e);
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     padding: 40px;
-    width: 90%; 
-    max-width: 400px; 
+    width: 90%;
+    max-width: 500px;
     text-align: center;
     transition: all 0.3s ease;
+    box-sizing: border-box;
 }
 
 .weather-card:hover {
@@ -51,41 +70,55 @@ body {
 
 h1 {
     margin-bottom: 30px;
-    color: #bb86fc;
-    font-size: 5vw;
+    font-family: 'Raleway', sans-serif;
+    font-size: 36px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    background: linear-gradient(135deg, #bb86fc, #03dac6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .input-group {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 input[type="text"] {
-    flex-grow: 1;
     padding: 10px;
-    margin-right: 10px;
+    margin-bottom: 10px;
     border: none;
     border-radius: 5px;
     background-color: #333333;
     color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    background-color: #444444;
+    outline: none;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 10px;
     border: none;
     border-radius: 5px;
     background-color: #bb86fc;
     color: #000000;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 button:hover {
     background-color: #9965f4;
+    transform: translateY(-2px);
 }
 
 .weather-info {
@@ -93,13 +126,13 @@ button:hover {
 }
 
 #location {
-    font-size: 3vw;
+    font-size: 28px;
     margin-bottom: 15px;
     color: #03dac6;
 }
 
 #temperature {
-    font-size: 6vw;
+    font-size: 42px;
     font-weight: bold;
     margin-bottom: 15px;
 }
@@ -107,5 +140,25 @@ button:hover {
 #description {
     font-style: italic;
     color: #cf6679;
-    font-size: 2vw;
+    font-size: 18px;
+}
+
+/* Responsive Design */
+@media (min-width: 600px) {
+    .input-group {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    input[type="text"] {
+        margin-bottom: 0;
+        margin-right: 10px;
+        width: auto;
+        flex-grow: 1;
+    }
+
+    button {
+        width: auto;
+    }
 }
